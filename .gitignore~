@@ -5,8 +5,7 @@
 *.obj
 
 # executables
-Spel
-
+main
 
 # Precompiled Headers
 *.gch
