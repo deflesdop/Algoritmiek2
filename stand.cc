@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 #include "stand.h"
 #include "standaard.h"
 using namespace std;
@@ -10,7 +11,8 @@ using namespace std;
 
 Stand::Stand()
 {
-  // eventueel TODO: implementeren
+  n = 5;
+  m = 5;
 
 }
 
@@ -18,9 +20,8 @@ Stand::Stand()
 
 Stand::Stand (int waardeM, int waardeN)
 {
-  cout << "Constructor van Stand is nog niet geimplementeerd." << endl;
-  // TODO: implementeren
-
+	n = waardeN;
+	m = waardeM;
 }
 
 //*************************************************************************
@@ -49,8 +50,20 @@ int Stand::getN ()
 
 void Stand::drukaf ()
 {
-  cout << "Methode Stand::drukaf is nog niet geimplementeerd." << endl;
-  // TODO: implementeren
+	cout << '\t';
+	for(int i = 1; i < getM(); i++)
+		cout << i << "  ";
+	cout << endl;
+	for(int i = 0; i < getM(); i++){
+	  cout << i+1 << '\t';
+	  for(int j = 0; j < getN(); j++){
+		  if(bord[i][j] > 9)
+			  cout << bord[i][j] <<  " ";
+		  else
+			  cout << bord[i][j] <<  "  ";
+	  }
+	  cout << endl;
+  }
 
 }  // drukaf
 
@@ -58,8 +71,8 @@ void Stand::drukaf ()
 
 void Stand::leesstenen (const char *invoernaam)
 {
-  cout << "Methode Stand::leesstenen is nog niet geimplementeerd." << endl;
-  // TODO: implementeren
+	ifstream fin(invoernaam, ifstream::in);
+
 
 }  // leesstenen
 

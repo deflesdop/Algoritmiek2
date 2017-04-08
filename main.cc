@@ -15,6 +15,7 @@
 #include <ctime>  // voor clock() en clock_t
 #include "standaard.h"
 #include "stand.h"
+#include <fstream>
 using namespace std;
 const int MaxBestandsNaamLengte = 30; // maximale lengte van een bestandsnaam
 
@@ -165,11 +166,10 @@ void hoofdmenu ()
 }  // hoofdmenu
 
 //*************************************************************************
-  
+
 int main ()
 {
-  hoofdmenu ();
-
+ //hoofdmenu ();
   return 0;
 
 }

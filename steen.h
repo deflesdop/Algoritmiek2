@@ -3,12 +3,14 @@
 #ifndef SteenHVar  // om te voorkomen dat dit .h bestand meerdere keren
 #define SteenHVar  // wordt ge-include 
 
+#include <fstream>
+
 const int MaxDim = 5;
 
 class Steen
 { public:
     // constructor
-    Steen ();
+    Steen (std::ifstream &fin);
 
     // Geef waarde van m.
     int getM ();
@@ -26,7 +28,7 @@ class Steen
     void roteer (int aantalkeer);  // of een soortgelijke methode
 
     // Spiegel steen in horizontale as.
-    void spiegelhorizontaleas ();  // of een soortgelijke methode
+    void spiegelhorizontaleas (int row, char arr[][5]);  // of een soortgelijke methode
 
     // TODO: uw eigen methodes en velden
 
@@ -40,6 +42,8 @@ class Steen
 
     // TODO: uw eigen methodes en velden
 
+    void roteerArray(int row, int col, char arr2[][5]);
+    void kopieerArray(char arr[][5]);
 };
 
 #endif
